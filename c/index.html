@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex">
+<meta name="theme-color" content="#FF5C93">
+<title>Purrch Up! Challenge</title>
+<meta property="og:title" content="A friend challenges you on Purrch Up!">
+<meta property="og:description" content="Same tower as their climb. No more, no less.">
+<meta property="og:image" content="https://purrch-up.github.io/icon.png">
+<meta property="og:type" content="website">
+<script>
+  // Safari's banner offers "Open" when the game is installed and hands it this very link.
+  (function () {
+    var banner = document.createElement('meta');
+    banner.name = 'apple-itunes-app';
+    banner.content = 'app-id=6830927273, app-argument=' + location.href;
+    document.head.appendChild(banner);
+  })();
+</script>
+<link rel="icon" href="/favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@800&family=Nunito:wght@800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/style.css">
+</head>
+<body>
+<main>
+  <p class="from" id="from">A friend challenges you</p>
+  <h1 id="title">Can you out-climb your friend?</h1>
+  <img class="icon" src="/icon.png" alt="Purrch Up!">
+  <p class="note" id="note">The same tower as their climb. No more, no less. Get Purrch Up!, then open this link again.</p>
+  <div class="actions">
+    <a class="button main hidden" id="open">Open Purrch Up!</a>
+    <a class="button hidden" id="play" href="https://play.google.com/store/apps/details?id=com.purrchup.app">Get it on Google Play</a>
+    <a class="button hidden" id="appstore" href="https://apps.apple.com/app/id6830927273">Download on the App Store</a>
+  </div>
+</main>
+<script>
+  (function () {
+    var text = {
+      en: {
+        from: 'A friend challenges you',
+        title: function (n) { return 'Can you get past step ' + n + '?'; },
+        anyTitle: 'Can you out-climb your friend?',
+        note: 'The same tower as their climb. No more, no less. Get Purrch Up!, then open this link again.',
+        open: 'Open Purrch Up!',
+        play: 'Get it on Google Play',
+        appstore: 'Download on the App Store'
+      },
+      vi: {
+        from: 'Một người bạn thách bạn',
+        title: function (n) { return 'Vượt được ' + n + ' bậc không?'; },
+        anyTitle: 'Leo hơn được bạn ấy không?',
+        note: 'Cùng một tháp với ván của bạn ấy. Không hơn, không kém. Tải Purrch Up! rồi mở lại link này nhé.',
+        open: 'Mở Purrch Up!',
+        play: 'Tải trên Google Play',
+        appstore: 'Tải trên App Store'
+      }
+    };
+    var lang = (navigator.language || 'en').toLowerCase().indexOf('vi') === 0 ? 'vi' : 'en';
+    var t = text[lang];
+    document.documentElement.lang = lang;
+
+    var params = new URLSearchParams(location.search);
+    var score = parseInt(params.get('s'), 10);
+    var valid = /^[0-9a-z]+$/.test(params.get('t') || '') && /^[0-9]+$/.test(params.get('v') || '') &&
+      score >= 0 && score <= 1000000;
+
+    document.getElementById('from').textContent = t.from;
+    document.getElementById('title').textContent = valid ? t.title(score) : t.anyTitle;
+    document.getElementById('note').textContent = t.note;
+    document.getElementById('open').textContent = t.open;
+    document.getElementById('play').textContent = t.play;
+    document.getElementById('appstore').textContent = t.appstore;
+
+    var agent = navigator.userAgent;
+    var android = /Android/i.test(agent);
+    var ios = /iPhone|iPad|iPod/i.test(agent) || (/Macintosh/.test(agent) && navigator.maxTouchPoints > 1);
+    var play = document.getElementById('play');
+    var appstore = document.getElementById('appstore');
+    if (android) {
+      // A link typed or pasted into the browser skips App Links; this opens the game when it is installed and
+      // falls back to the store when it is not.
+      var open = document.getElementById('open');
+      open.href = 'intent://' + location.host + location.pathname + location.search +
+        '#Intent;scheme=https;package=com.purrchup.app;S.browser_fallback_url=' + encodeURIComponent(play.href) + ';end';
+      if (valid) open.classList.remove('hidden');
+      play.classList.remove('hidden');
+    } else if (ios) {
+      appstore.classList.add('main');
+      appstore.classList.remove('hidden');
+    } else {
+      play.classList.remove('hidden');
+      appstore.classList.remove('hidden');
+    }
+  })();
+</script>
+</body>
+</html>

@@ -1,0 +1,13 @@
+{
+  "applinks": {
+    "details": [
+      {
+        "appIDs": ["3KD3D6628H.com.purrchup.app"],
+        "components": [
+          { "/": "/c", "comment": "challenge link" },
+          { "/": "/c/*", "comment": "challenge link" }
+        ]
+      }
+    ]
+  }
+}

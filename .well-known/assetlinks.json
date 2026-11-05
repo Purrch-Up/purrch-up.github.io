@@ -1,0 +1,12 @@
+[
+  {
+    "relation": ["delegate_permission/common.handle_all_urls"],
+    "target": {
+      "namespace": "android_app",
+      "package_name": "com.purrchup.app",
+      "sha256_cert_fingerprints": [
+        "0A:0D:73:7D:44:96:B9:CF:B3:83:8B:E6:36:05:F5:77:43:1F:8D:D6:E4:D6:13:02:38:A3:8E:0F:7E:D2:37:1B"
+      ]
+    }
+  }
+]

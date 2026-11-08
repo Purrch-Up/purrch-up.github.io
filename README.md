@@ -14,3 +14,6 @@ The site behind Purrch Up! challenge links, served by GitHub Pages from `main`.
   Play App Signing key from Play Console (Test and release → App integrity).
 - `.well-known/apple-app-site-association`: Team ID and bundle ID of the iOS app.
 - `.nojekyll`: without it, GitHub Pages drops the `.well-known` folder.
+
+Pages link `style.css`, `icon.png` and `favicon.png` with `?v=N`; GitHub Pages lets browsers cache them for 10 minutes,
+so bump N in every page whenever one of them changes, or new pages show with the old styles.

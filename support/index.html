@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#FF5C93">
+<title>Support · Purrch Up!</title>
+<meta name="description" content="Help with Purrch Up!: purchases, ads, language and contact.">
+<meta property="og:title" content="Support · Purrch Up!">
+<meta property="og:description" content="Help with Purrch Up!: purchases, ads, language and contact.">
+<meta property="og:image" content="https://purrch-up.github.io/icon.png">
+<meta property="og:url" content="https://purrch-up.github.io/support/">
+<link rel="alternate" hreflang="en" href="https://purrch-up.github.io/support/">
+<link rel="alternate" hreflang="vi" href="https://purrch-up.github.io/vi/support/">
+<link rel="icon" href="/favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@800&family=Nunito:wght@400;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/style.css">
+<script>
+try {
+  var chosen = localStorage.getItem("purrchup-lang");
+  var langs = navigator.languages || [navigator.language || ""];
+  if (chosen === "vi" || (!chosen && /^vi\b/i.test(langs[0] || ""))) {
+    location.replace("/vi" + location.pathname + location.search + location.hash);
+  }
+} catch (e) {}
+</script>
+</head>
+<body class="doc">
+<header class="bar"><div class="bar-in">
+<a class="brand" href="/"><img src="/icon.png" alt="" width="36" height="36"><span>Purrch Up!</span></a>
+<a class="lang" href="/vi/support/" hreflang="vi" lang="vi">VI</a>
+</div></header>
+<main class="page">
+<h1>Support</h1>
+<p>Something wrong, or an idea for the cat? Write to <a href="mailto:phuongnamtruong.it@gmail.com">phuongnamtruong.it@gmail.com</a>. Tell us your phone model and what happened, and we'll get back to you.</p>
+
+<h2>I bought something but don't have it</h2>
+<p>Open Settings &rsaquo; Restore purchases. This also brings back coats, accessories and Remove ads on a new phone, as long as it uses the same Google or Apple account.</p>
+
+<h2>How do I remove ads?</h2>
+<p>Buy Remove ads in Settings or in the Wardrobe. It stops the ads shown after a climb. Ads you choose to watch, such as for a bubble, stay available.</p>
+
+<h2>How do I change the language?</h2>
+<p>Open Settings &rsaquo; Language. The game uses your phone's per-app language setting, so you can pick a language just for Purrch Up!.</p>
+
+<h2>Music, sound or vibration is too much</h2>
+<p>Each one has its own switch in Settings.</p>
+
+<h2>How do I change my ad choices?</h2>
+<p>Where the law asks for it, Settings &rsaquo; Ad privacy opens the consent form again. On iOS you can also change tracking in the phone's Settings &rsaquo; Privacy &amp; Security &rsaquo; Tracking.</p>
+
+<h2>How do I delete my data?</h2>
+<p>Your progress lives only on your phone. Uninstalling the game deletes it. See the <a href="../privacy/">privacy policy</a> for what Google's services keep.</p>
+</main>
+<footer class="foot">
+<div><a href="/privacy/">Privacy</a> · <a href="/support/">Support</a> · <a href="mailto:phuongnamtruong.it@gmail.com">Email</a></div>
+<div>© 2026 Purrch Up! · Truong Phuong Nam</div>
+</footer>
+<script>
+document.querySelector(".bar .lang").addEventListener("click", function (e) {
+  try { localStorage.setItem("purrchup-lang", e.currentTarget.getAttribute("hreflang")); } catch (err) {}
+});
+</script>
+</body>
+</html>

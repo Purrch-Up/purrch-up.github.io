@@ -79,3 +79,69 @@ h1 {
 .button.main { height: 72px; border-radius: 24px; background: var(--orange); box-shadow: 0 8px 0 var(--orange-lip); }
 .button:active { transform: translateY(5px); box-shadow: none; }
 .hidden { display: none; }
+
+/* Text pages: privacy policy and support. Calm on purpose: the pink stays an accent, as on other games' policy pages */
+body.doc { display: block; background: #E6F4FD; }
+.bar {
+  border-bottom: 4px solid var(--pink);
+  background: #fff;
+}
+.bar-in {
+  max-width: 712px;
+  margin: 0 auto;
+  padding: 12px 16px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: var(--ink);
+  text-decoration: none;
+  font-family: 'Baloo 2', system-ui, sans-serif;
+  font-size: 22px;
+}
+.brand img { border-radius: 10px; }
+.lang {
+  padding: 4px 14px;
+  border-radius: 14px;
+  border: 2px solid var(--pink);
+  color: var(--pink);
+  text-decoration: none;
+}
+main.page {
+  display: block;
+  max-width: 712px;
+  min-height: 0;
+  margin: 0 auto;
+  padding: 28px 16px 8px;
+  text-align: left;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.6;
+  overflow-wrap: anywhere;
+}
+.page h1 { margin: 0; font-size: 34px; transform: none; }
+.page h2 { margin: 28px 0 6px; font-family: 'Baloo 2', system-ui, sans-serif; font-weight: 800; font-size: 21px; line-height: 1.25; }
+.page p, .page ul { margin: 8px 0; }
+.page ul { padding-left: 22px; }
+.page li { margin: 6px 0; }
+.page strong { font-weight: 700; }
+.page a { color: #C2185B; font-weight: 700; }
+.page code { font-size: 14px; background: #fff; padding: 1px 5px; border-radius: 6px; }
+.muted { color: var(--ink-soft); }
+.foot {
+  max-width: 712px;
+  margin: 0 auto;
+  padding: 24px 16px 32px;
+  border-top: 1px solid #C9DCEA;
+  text-align: center;
+  font-size: 14px;
+  line-height: 1.8;
+  color: var(--ink-soft);
+}
+.foot a { color: var(--ink); }
+.links { margin-top: 20px; font-size: 14px; }
+.links a { color: var(--ink); }

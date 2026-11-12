@@ -19,6 +19,8 @@ The Purrch Up! website and the pages behind its challenge links, served by GitHu
 - `.well-known/assetlinks.json`: Android signing certificates allowed to open the links. Add the upload key and the
   Play App Signing key from Play Console (Test and release → App integrity).
 - `.well-known/apple-app-site-association`: Team ID and bundle ID of the iOS app.
+- `app-ads.txt`: the AdMob publisher ID (`pub-…` from the app's AdMob IDs). AdMob reads it from the developer website
+  set in both store listings; add a line for every new ad network.
 - `.nojekyll`: without it, GitHub Pages drops the `.well-known` folder.
 
 Pages link `style.css`, `home.css`, `icon.png` and `favicon.png` with `?v=N`; GitHub Pages lets browsers cache them for 10 minutes,

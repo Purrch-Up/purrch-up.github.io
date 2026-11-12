@@ -11,7 +11,7 @@
 * { box-sizing: border-box; }
 html, body { margin: 0; min-height: 100%; }
 body {
-  background: var(--pink);
+  background: linear-gradient(180deg, #E8F6FF 0%, #BDE7FF 100%) fixed;
   color: var(--ink);
   font-family: 'Nunito', system-ui, sans-serif;
   font-weight: 800;
@@ -74,10 +74,14 @@ h1 {
   color: var(--ink);
   text-decoration: none;
   background: #fff;
-  box-shadow: 0 7px 0 #E9A9C0;
+  box-shadow: 0 7px 0 #9CCDE8;
 }
 .button.main { height: 72px; border-radius: 24px; background: var(--orange); box-shadow: 0 8px 0 var(--orange-lip); }
 .button:active { transform: translateY(5px); box-shadow: none; }
+.badges { display: flex; flex-wrap: wrap; justify-content: center; gap: 12px; padding-top: 16px; }
+.badge { display: block; transition: transform .15s; }
+.badge:active { transform: scale(.96); }
+.badge img { display: block; height: 56px; width: auto; }
 .hidden { display: none; }
 
 /* Text pages: privacy policy and support. Calm on purpose: the pink stays an accent, as on other games' policy pages */

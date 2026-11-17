@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+Disallow: /c/
+
+Sitemap: https://purrch-up.github.io/sitemap.xml
